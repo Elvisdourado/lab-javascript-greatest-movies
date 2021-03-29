@@ -20,6 +20,7 @@ function getAllDirectors(movies) {
 
 // 3 ———————————————————
 function ratesAverage(movies) {
+  if (movie.rate) {     movie.rate = 0;  }
     if (movies.length == 0) return 0;
     let rateSum = movies.reduce(
       (accumulator, movie) => accumulator + movie.rate,
@@ -32,8 +33,7 @@ function ratesAverage(movies) {
 // define a func expression that accepts an array of movies
 const dramaMoviesRate = (arr) => {
     const dramas = arr.filter((movie) => movie.genre.includes("Drama"));
-  
-    if (!dramas.length) {
+      if (!dramas.length) {
       return 0;
     }
   
@@ -73,7 +73,8 @@ const orderAlphabetically = (arr) => {
     });
   
     //use splice to return an array that's only 20 elements long
-    movieTitles.splice(20);
+    movieTitles.splice(0,20);
+    
   
     return movieTitles;
   };
@@ -81,3 +82,8 @@ const orderAlphabetically = (arr) => {
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
+
+
+
+
+
